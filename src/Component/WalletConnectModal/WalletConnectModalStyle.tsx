@@ -17,9 +17,9 @@ export const useStyles = makeStyles((theme: Theme) => ({
     backgroundColor: "rgba(0, 0, 0, 0.7)",
   },
   modalRoot: {
-    padding: "22px 84px 60px 84px",
+    padding: "10px",
     position: "fixed",
-    background: "#282E4E",
+    background: "#ffffff",
     boxShadow: "0px 0px 30px rgba(55, 55, 79, 0.05)",
     borderRadius: "10px",
     textAlign: "center",
