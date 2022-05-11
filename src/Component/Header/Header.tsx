@@ -1,11 +1,9 @@
-import { useEffect, useState } from "react";
+import React from "react"
+interface HeaderProps {
+  handleClick: () => void;
+}
 
-const Header  = () => {
-
-  const handleSignin =  () => {
-    console.log("here")
-  };
-
+const Header = ({ handleClick }: HeaderProps) => {
   return (
     <>
       <nav className='navigation nav-down'>
@@ -65,7 +63,7 @@ const Header  = () => {
               </a>
             </div>
             <div>
-              <a className='animate__delay-5s navCursor' onClick={handleSignin}>
+              <a className='animate__delay-5s navCursor' onClick={handleClick}>
                 Connect Wallet
               </a>
             </div>
@@ -96,7 +94,7 @@ const Header  = () => {
             <a href='our-team.html'>Our Team</a>
           </div>
           <div className='dropdown'>
-            <a className='navCursor' onClick={handleSignin}>
+            <a className='navCursor' onClick={handleClick}>
               Connect Wallet
             </a>
           </div>
