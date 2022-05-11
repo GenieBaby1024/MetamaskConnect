@@ -18,7 +18,7 @@ const useStyles = makeStyles({
     },
   },
   activeOptionButton: {
-    borderRadius: 15,
+    borderRadius: 12,
     width: 300,
     paddingTop: "20px",
     paddingBottom: "20px",

@@ -21,7 +21,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     position: "fixed",
     background: "#ffffff",
     boxShadow: "0px 0px 30px rgba(55, 55, 79, 0.05)",
-    borderRadius: "10px",
+    borderRadius: "12px",
     textAlign: "center",
     zIndex: 99999,
     maxHeight: "calc(100vh - 32px)",

@@ -51,7 +51,7 @@ export default function WalletConnectModal({
         ref={rootRef}>
         <div className={classes.modalRoot} ref={contentRef}>
           <Web3ReactProvider getLibrary={getLibrary}>
-            <MainContent />
+            <MainContent onClose={onClose}/>
           </Web3ReactProvider>
         </div>
       </div>

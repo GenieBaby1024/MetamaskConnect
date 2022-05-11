@@ -4,16 +4,20 @@ import { useWeb3React } from "@web3-react/core";
 import { connectorNames, connectorTypes } from "./constants";
 import useStyles from "./styles";
 
-const MainContent = () => {
+interface MainContentProps {
+  onClose: () => void;
+}
+
+const MainContent = ({ onClose }: MainContentProps) => {
   const context = useWeb3React();
   const classes = useStyles();
 
   const { activate, connector } = context;
 
-  const handleClick = (condition: boolean, item: any) => {
+  const handleClick = async (condition: boolean, item: any) => {
     if (!condition) {
-      console.log("this is condition");
-      activate(connectorTypes[item]);
+      await activate(connectorTypes[item]);
+      await onClose();
     }
   };
 
