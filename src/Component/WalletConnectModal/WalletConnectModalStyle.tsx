@@ -31,8 +31,5 @@ export const useStyles = makeStyles((theme: Theme) => ({
       width: "calc(100% - 32px) !important",
       margin: "0px 50px",
     },
-    [theme.breakpoints.down(500)]: {
-      padding: "22px 20px 60px 20px",
-    },
   },
 }));

@@ -1,7 +1,9 @@
-import React, { Component, useState }  from 'react';
+/** @format */
+
+import React, { Component, useState } from "react";
 import Header from "../Header/Header";
 import WalletConnectModal from "../WalletConnectModal/WalletConnectModal";
-
+import { Helmet } from "react-helmet";
 function Landing() {
   const [modalStatus, setModalStatus] = useState(false);
   const handleClose = () => {
@@ -352,6 +354,9 @@ function Landing() {
       </header>
       <div className='clearfix'></div>
       <WalletConnectModal show={modalStatus} onClose={handleClose} />
+      <Helmet>
+        <script src='assets/js/scripts.min.js' type='text/javascript' />
+      </Helmet>
     </>
   );
 }
