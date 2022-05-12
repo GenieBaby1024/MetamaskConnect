@@ -1,5 +1,3 @@
-/** @format */
-
 import React, { useEffect } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { connectorNames, connectorTypes } from "./constants";
@@ -33,8 +31,6 @@ const MainContent = ({ onClose }: MainContentProps) => {
   useEffect(() => {
     dispatch(setloginAddress(account));
   }, [account]);
-
-  console.log(account);
 
   return (
     <div className={classes.root}>

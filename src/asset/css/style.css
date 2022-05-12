@@ -2948,3 +2948,24 @@ button#form-submit .wrap-button-link {
   .roadmap-header-bg .social-icon {
     display: none;
   }
+
+  .c-dashboard-wrap{
+    position: fixed;
+    z-index: 99998;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .c-dashboard-nonenftbtn{
+    border: 2px solid #fff;
+    border-radius: 2em;
+    color: #fff;
+    padding: 0.65em 1.5em 0.75em;
+    cursor: pointer;
+  }

@@ -1,5 +1,3 @@
-/** @format */
-
 import React, { Component, useState } from "react";
 import Header from "../Header/Header";
 import WalletConnectModal from "../WalletConnectModal/WalletConnectModal";

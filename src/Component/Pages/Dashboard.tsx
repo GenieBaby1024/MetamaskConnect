@@ -1,28 +1,37 @@
-/** @format */
-
-import React, { Component, useEffect, useState } from "react";
-import { getNfts } from "../../store/api/nft";
+import React, { useEffect, useState } from "react";
 import { selectLoginAddress } from "../../store/auth/selectors";
-import { useAppSelector } from "../../store/hooks";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { getNftCollections } from "../../store/nftCollections";
+import { nftCollection } from "../../store/nftCollections/selectors";
 
 function Dashboard() {
-  const [collectionData, setCollectionData] = useState<any>();
   const account = useAppSelector(selectLoginAddress);
+  const dispatch = useAppDispatch();
+  const collectionData = useAppSelector(nftCollection);
 
-  const init = async () => {
-    let response = await getNfts({
-      asset_owner: account,
-    });
-    setCollectionData(response?.data);
-  };
+  console.log(collectionData);
 
   useEffect(() => {
-    init();
+    dispatch(getNftCollections(account));
   }, [account]);
+
+  const handleNoneNftClick = () => {
+    window.open("https://opensea.io/collection/zippo-verse", "_blank");
+  };
 
   return (
     <>
-      <div>{account}</div>
+      {collectionData?.length === 0 ||
+      collectionData === null ||
+      collectionData === undefined ? (
+        <div className='c-dashboard-wrap'>
+          <div className='c-dashboard-nonenftbtn' onClick={handleNoneNftClick}>
+            Unlocked to view your Nft
+          </div>
+        </div>
+      ) : (
+        <div>{account} </div>
+      )}
     </>
   );
 }
