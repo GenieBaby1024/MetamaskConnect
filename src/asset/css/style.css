@@ -3058,3 +3058,7 @@ button#form-submit .wrap-button-link {
 .c-dashboard-nonenftbtn:hover {
   opacity: 0.7;
 }
+
+.cursorPointer {
+  cursor: pointer;
+}

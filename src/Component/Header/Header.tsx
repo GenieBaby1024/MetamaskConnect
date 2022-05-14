@@ -24,14 +24,14 @@ const Header = () => {
           <div className='sub-menu'>
             <div onClick={handleToLanding}>
               <a
-                className='menu-active animate__delay-1s'
+                className='menu-active cursorPointer animate__delay-1s'
                 data-bs-toggle='collapse'>
                 Home
               </a>
             </div>
             <div onClick={handleToPlanet}>
               <a
-                className='animate__delay-2s'
+                className='animate__delay-2s cursorPointer'
                 data-bs-toggle='collapse'>
                 Zippo Planet
               </a>
@@ -77,12 +77,12 @@ const Header = () => {
           <div className='mobile-menu-bg img-fluid'></div>
         </nav>
         <div className='home-menu-text'>
-          <div className='dropdown'  onClick={handleToLanding}>
+          <div className='dropdown cursorPointer'  onClick={handleToLanding}>
             <a className='menu-active'>
               Home
             </a>
           </div>
-          <div className='dropdown' onClick={handleToPlanet}>
+          <div className='dropdown cursorPointer' onClick={handleToPlanet}>
             <a>Zippo Planet</a>
           </div>
           <div className='dropdown'>

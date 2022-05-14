@@ -1,6 +1,5 @@
 /** @format */
 
-import { useWeb3React } from "@web3-react/core";
 import React, { useEffect, useState } from "react";
 import { selectLoginAddress } from "../../store/auth/selectors";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
@@ -11,8 +10,6 @@ import WalletConnectModal from "../WalletConnectModal/WalletConnectModal";
 
 function Planet() {
   const loginAddress = useAppSelector(selectLoginAddress);
-
-  const { account } = useWeb3React();
   const dispatch = useAppDispatch();
   const collectionData = useAppSelector(nftCollection);
   const [modalStatus, setModalStatus] = useState(false);
@@ -37,7 +34,6 @@ function Planet() {
         <WalletConnectModal
           show={modalStatus}
           onClose={() => setModalStatus(false)}
-          toUrl='/planet'
         />
       </div>
       <div

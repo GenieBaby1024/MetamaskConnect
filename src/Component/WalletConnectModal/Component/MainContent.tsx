@@ -12,10 +12,9 @@ declare var window: any;
 
 interface MainContentProps {
   onClose: () => void;
-  goal: string;
 }
 
-const MainContent = ({ onClose, goal }: MainContentProps) => {
+const MainContent = ({ onClose }: MainContentProps) => {
   const dispatch = useAppDispatch();
   const context = useWeb3React();
   const classes = useStyles();
@@ -30,12 +29,10 @@ const MainContent = ({ onClose, goal }: MainContentProps) => {
             ? window.open("https://metamask.io/", "_blank")
             : await activate(connectorTypes[item]);
           await onClose();
-          await navigate(goal);
         }
       } else {
         await activate(connectorTypes[item]);
         await onClose();
-        await navigate(goal);
       }
     }
   };
