@@ -1,12 +1,7 @@
 import React, { Component, useState } from "react";
 import Header from "../Header/Header";
-import WalletConnectModal from "../WalletConnectModal/WalletConnectModal";
 import { Helmet } from "react-helmet";
 function Landing() {
-  const [modalStatus, setModalStatus] = useState(false);
-  const handleClose = () => {
-    setModalStatus(false);
-  };
   return (
     <>
       <div id='loader-wrapper'>
@@ -21,7 +16,7 @@ function Landing() {
       <div className='rotate-img'>
         <div className='data-img' data-img='rotate.svg'></div>
       </div>
-      <Header handleClick={() => setModalStatus(true)} />
+      <Header />
       <header className='home-header-bg'>
         <a href='index.html' className='header-logo'>
           <img className='logo' src='assets/img/zippo-logo.png' alt='logo' />
@@ -351,7 +346,6 @@ function Landing() {
         <div id='scroll-down' className='d-none'></div>
       </header>
       <div className='clearfix'></div>
-      <WalletConnectModal show={modalStatus} onClose={handleClose} />
       <Helmet>
         <script src='assets/js/scripts.min.js' type='text/javascript' />
       </Helmet>

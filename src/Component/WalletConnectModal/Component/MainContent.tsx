@@ -3,14 +3,15 @@ import { useWeb3React } from "@web3-react/core";
 import { connectorNames, connectorTypes } from "./constants";
 import useStyles from "./styles";
 import { useNavigate } from "react-router-dom";
-import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { useAppDispatch } from "../../../store/hooks";
 import { setloginAddress } from "../../../store/auth";
 
 interface MainContentProps {
   onClose: () => void;
+  goal:  string;
 }
 
-const MainContent = ({ onClose }: MainContentProps) => {
+const MainContent = ({ onClose, goal }: MainContentProps) => {
   const dispatch = useAppDispatch();
   const context = useWeb3React();
   const classes = useStyles();
@@ -22,7 +23,7 @@ const MainContent = ({ onClose }: MainContentProps) => {
     if (!condition) {
       await activate(connectorTypes[item]);
       await onClose();
-      await navigate("/dashboard");
+      await navigate(goal);
     } else {
       console.log("metamask login error");
     }

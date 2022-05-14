@@ -6,7 +6,6 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   loaderWrapper: {
     position: "fixed",
-    zIndex: 99998,
     top: 0,
     left: 0,
     width: "100%",

@@ -13,12 +13,14 @@ function getLibrary(provider: any) {
 
 interface WalletConnectModalProps {
   show: boolean;
+  toUrl: string;
   onClose: () => void;
 }
 
 export default function WalletConnectModal({
   show,
   onClose,
+  toUrl,
 }: WalletConnectModalProps) {
   const classes = useStyles();
 
@@ -51,7 +53,7 @@ export default function WalletConnectModal({
         ref={rootRef}>
         <div className={classes.modalRoot} ref={contentRef}>
           <Web3ReactProvider getLibrary={getLibrary}>
-            <MainContent onClose={onClose}/>
+            <MainContent onClose={onClose} goal={toUrl}/>
           </Web3ReactProvider>
         </div>
       </div>
