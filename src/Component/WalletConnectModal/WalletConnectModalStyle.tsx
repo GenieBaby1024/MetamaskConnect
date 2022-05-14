@@ -5,6 +5,7 @@ export const useStyles = makeStyles((theme: Theme) => ({
     display: "none",
   },
   loaderWrapper: {
+    zIndex: 1,
     position: "fixed",
     top: 0,
     left: 0,

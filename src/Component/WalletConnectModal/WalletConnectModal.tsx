@@ -44,6 +44,8 @@ export default function WalletConnectModal({
         }
       }
     }
+
+  
   }, [rootRef, contentRef, show]);
 
   return (

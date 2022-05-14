@@ -1,27 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { setloginAddress, setlogoutAddress } from "./actions";
 
-// const PREFIX = 'trade/orderHsitory'
 const PREFIX = "auth";
-declare var window: any;
-
-let initLoginAddress;
-if (
-  window.ethereum &&
-  localStorage.loginAddress &&
-  localStorage.loginAddress !== "undefined"
-) {
-  initLoginAddress = localStorage.loginAddress;
-} else {
-  initLoginAddress = "";
-}
 
 const initialState: any = {
-  loginAddress: initLoginAddress,
+  loginAddress: "",
 };
 
 const setAuth = (state: any, loginAddress: any) => {
-  localStorage.setItem("loginAddress", loginAddress);
   state.loginAddress = loginAddress;
 };
 

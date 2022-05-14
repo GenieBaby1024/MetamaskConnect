@@ -2,6 +2,7 @@ import { injected, walletconnect, coinbase } from "./connectors";
 import MetaMaskIcon from "../../../asset/icons/metamask.svg";
 import CoinBaseIcon from "../../../asset/icons/coinbase.svg";
 import WalletConnectIcon from "../../../asset/icons/walletconnect.svg";
+import {walletType} from "../../../config/constant"
 
 export const connectorTypes: any = {
   Injected: injected,
@@ -11,15 +12,15 @@ export const connectorTypes: any = {
 
 export const connectorNames: any = {
   Injected: {
-    name: "Meta mask",
+    name: walletType.metamask,
     icon: MetaMaskIcon,
   },
   WalletConnect: {
-    name: "Wallet Connect",
+    name: walletType.walletconnect,
     icon: WalletConnectIcon,
   },
   Coinbase: {
-    name: "Coin Base",
+    name: walletType.coinbase,
     icon: CoinBaseIcon,
   },
 };

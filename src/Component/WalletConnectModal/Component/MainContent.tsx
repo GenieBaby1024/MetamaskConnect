@@ -1,14 +1,18 @@
-import React, { useEffect } from "react";
+/** @format */
+
+import React, { useEffect, useState } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { connectorNames, connectorTypes } from "./constants";
 import useStyles from "./styles";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../../store/hooks";
 import { setloginAddress } from "../../../store/auth";
+import { walletType } from "../../../config/constant";
+declare var window: any;
 
 interface MainContentProps {
   onClose: () => void;
-  goal:  string;
+  goal: string;
 }
 
 const MainContent = ({ onClose, goal }: MainContentProps) => {
@@ -16,21 +20,30 @@ const MainContent = ({ onClose, goal }: MainContentProps) => {
   const context = useWeb3React();
   const classes = useStyles();
   const navigate = useNavigate();
-
   const { activate, connector, account } = context;
 
   const handleClick = async (condition: boolean, item: any) => {
     if (!condition) {
-      await activate(connectorTypes[item]);
-      await onClose();
-      await navigate(goal);
-    } else {
-      console.log("metamask login error");
+      if (connectorNames[item]?.name === walletType.metamask) {
+        {
+          window.ethereum === undefined
+            ? window.open("https://metamask.io/", "_blank")
+            : await activate(connectorTypes[item]);
+          await onClose();
+          await navigate(goal);
+        }
+      } else {
+        await activate(connectorTypes[item]);
+        await onClose();
+        await navigate(goal);
+      }
     }
   };
 
   useEffect(() => {
-    dispatch(setloginAddress(account));
+    if (account !== undefined && account !== null && account) {
+      dispatch(setloginAddress(account));
+    }
   }, [account]);
 
   return (
