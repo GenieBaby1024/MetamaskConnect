@@ -1,13 +1,25 @@
 import axios from "axios";
-import { REQUEST_API_URL } from "../../config/constant";
+import { apikey, NFTASSETS_API_URL, NFTASSET_API_URL } from "../../config/constant";
 
-export const getNfts = async (data: any) => {
+export const assetsRequest = async (data: any) => {
   try {
-    const response = await axios.get(`${REQUEST_API_URL}`, {
+    const response = await axios.get(`${NFTASSETS_API_URL}`, {
       params: data,
+      headers: {
+        "X-API-KEY": apikey,
+      },
     });
     return response.data;
   } catch (err) {
     console.log(err);
   }
 };
+
+export const getNftPrice = async (data : any) =>{
+  try {
+    const response = await axios.get(`${NFTASSET_API_URL}/${data.contractAddress}/${data.tokenid}`);
+    return response.data;
+  } catch (err) {
+    console.log(err);
+  }
+}

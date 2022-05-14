@@ -2990,12 +2990,13 @@ button#form-submit .wrap-button-link {
 }
 
 .c-planet-root {
-  background-image: url("../img/portfolio/big-img/55.jpg");
+  /* background-image: url("../img/portfolio/big-img/55.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  min-height: 100vh; */
   width: 100%;
-  min-height: 100vh;
+  background: #c9c9c9;
 }
 
 .displayNone {
@@ -3061,4 +3062,71 @@ button#form-submit .wrap-button-link {
 
 .cursorPointer {
   cursor: pointer;
+}
+
+.c-planet-root {
+  padding: 50px;
+}
+
+.c-planet-nftitem {
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.c-planet-nftimg {
+  width: 100%;
+}
+
+.c-planet-desroot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  padding: 10px;
+}
+.c-planet-titleroot {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.c-planet-title {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 31px;
+  text-align: center;
+  color: #878181;
+}
+.c-planet-titleValue {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 31px;
+  text-align: center;
+  color: #000000;
+}
+.c-planet-priceroot {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.c-planet-price {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 31px;
+  text-align: center;
+  color: #878181;
+}
+.c-planet-priceValue {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 31px;
+  text-align: center;
+  color: #000000;
 }

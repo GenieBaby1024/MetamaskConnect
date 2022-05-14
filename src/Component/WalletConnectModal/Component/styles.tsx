@@ -1,6 +1,6 @@
-import { makeStyles } from "@material-ui/styles";
+import { Theme, makeStyles, withStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles({
+export const useStyles = makeStyles((theme: Theme) => ({
   root: {
     height: "100%",
     minWidth: "100%",
@@ -16,6 +16,9 @@ const useStyles = makeStyles({
     "&:hover": {
       background: "#e7dada",
     },
+    [theme.breakpoints.down(769)]: {
+      width: "100%",
+    },
   },
   activeOptionButton: {
     borderRadius: 12,
@@ -25,13 +28,11 @@ const useStyles = makeStyles({
     marginBottom: "20px",
     background: "#e7dada",
   },
-  btnTitle:{
+  btnTitle: {
     fontSize: 16,
     marginTop: "20px",
   },
-  btnIcon:{
+  btnIcon: {
     width: "70px",
   },
-});
-
-export default useStyles;
+}));

@@ -1,13 +1,11 @@
-/** @format */
-
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useWeb3React } from "@web3-react/core";
 import { connectorNames, connectorTypes } from "./constants";
-import useStyles from "./styles";
-import { useNavigate } from "react-router-dom";
+import { useStyles } from "./styles";
 import { useAppDispatch } from "../../../store/hooks";
 import { setloginAddress } from "../../../store/auth";
-import { walletType } from "../../../config/constant";
+import { nftContractAddress, walletType } from "../../../config/constant";
+import { getNftAssets } from "../../../store/nft";
 declare var window: any;
 
 interface MainContentProps {
@@ -18,7 +16,6 @@ const MainContent = ({ onClose }: MainContentProps) => {
   const dispatch = useAppDispatch();
   const context = useWeb3React();
   const classes = useStyles();
-  const navigate = useNavigate();
   const { activate, connector, account } = context;
 
   const handleClick = async (condition: boolean, item: any) => {
@@ -40,6 +37,11 @@ const MainContent = ({ onClose }: MainContentProps) => {
   useEffect(() => {
     if (account !== undefined && account !== null && account) {
       dispatch(setloginAddress(account));
+      const params = {
+        owner: "0x74501b4130d1c3C7a82ccB57B67aF9F4c3279746",
+        asset_contract_address: nftContractAddress,
+      };
+      dispatch(getNftAssets(params));
     }
   }, [account]);
 
