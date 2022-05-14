@@ -1,5 +1,3 @@
-/** @format */
-
 import React, { useEffect, useState } from "react";
 import { selectLoginAddress } from "../../store/auth/selectors";
 import { useAppSelector } from "../../store/hooks";
@@ -12,7 +10,6 @@ import { nftContractAddress } from "../../config/constant";
 
 function Planet() {
   const loginAddress = useAppSelector(selectLoginAddress);
-  const collectionData = useAppSelector(nftassets);
   const assetsDate = useAppSelector(nftassets);
   const [modalStatus, setModalStatus] = useState(false);
   const [resultArray, setResultArray] = useState<any>();
@@ -94,9 +91,9 @@ function Planet() {
       </div>
       <div
         className={
-          collectionData?.assets.length === 0 &&
-          collectionData !== undefined &&
-          collectionData !== null &&
+          assetsDate?.assets.length === 0 &&
+          assetsDate !== undefined &&
+          assetsDate !== null &&
           loginAddress !== "" &&
           loginAddress !== undefined &&
           loginAddress !== null

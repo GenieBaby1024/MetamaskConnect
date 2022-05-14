@@ -38,7 +38,7 @@ const MainContent = ({ onClose }: MainContentProps) => {
     if (account !== undefined && account !== null && account) {
       dispatch(setloginAddress(account));
       const params = {
-        owner: "0x74501b4130d1c3C7a82ccB57B67aF9F4c3279746",
+        owner: account,
         asset_contract_address: nftContractAddress,
       };
       dispatch(getNftAssets(params));

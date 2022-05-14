@@ -1,6 +1,6 @@
 import React from "react";
 import { useStyles } from "./WalletConnectModalStyle";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { Web3ReactProvider } from "@web3-react/core";
 import { Web3Provider } from "@ethersproject/providers";
 import MainContent from "./Component/MainContent";
@@ -42,8 +42,6 @@ export default function WalletConnectModal({
         }
       }
     }
-
-  
   }, [rootRef, contentRef, show]);
 
   return (

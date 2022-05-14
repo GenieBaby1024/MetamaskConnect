@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React from "react";
 import Header from "../Header/Header";
 import { Helmet } from "react-helmet";
 function Landing() {
@@ -330,6 +330,7 @@ function Landing() {
                     className='img-fluid'
                     style={{ width: "20px" }}
                     src='assets/img/opensea.svg'
+                    alt="opensea"
                   />
                 </span>
                 <span className='link-hover text-white'>
@@ -337,6 +338,7 @@ function Landing() {
                     className='img-fluid'
                     style={{ width: "20px" }}
                     src='assets/img/opensea.svg'
+                    alt="opensea"
                   />
                 </span>
               </div>
