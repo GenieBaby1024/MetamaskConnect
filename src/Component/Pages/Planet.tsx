@@ -80,11 +80,11 @@ function Planet() {
           loginAddress === "" ||
           loginAddress === undefined ||
           loginAddress === null
-            ? "c-dashboard-wrap"
+            ? "c-planet-wrap"
             : "displayNone"
         }>
         <div
-          className='c-dashboard-connectwallettbtn'
+          className='c-planet-connectwallettbtn'
           onClick={() => setModalStatus(true)}>
           Connect Your Wallet
         </div>
@@ -97,17 +97,17 @@ function Planet() {
           loginAddress !== "" &&
           loginAddress !== undefined &&
           loginAddress !== null
-            ? "c-dashboard-wrap"
+            ? "c-planet-wrap"
             : "displayNone"
         }>
-        <div className='c-dashboard-nonftmodalroot'>
-          <div className='c-dashboard-nonftmodaltitle'>JOIN OUR COMMUNITY</div>
-          <div className='c-dashboard-nonftmodaldes'>
+        <div className='c-planet-nonftmodalroot'>
+          <div className='c-planet-nonftmodaltitle'>JOIN OUR COMMUNITY</div>
+          <div className='c-planet-nonftmodaldes'>
             The Planet is for Zippo members only You currently don't hold an
             zippo verse nfts.
           </div>
           <div
-            className='c-dashboard-nonenftbtn'
+            className='c-planet-nonenftbtn'
             onClick={() => handleNoneNftClick()}>
             Unlocked to view your Nft
           </div>
