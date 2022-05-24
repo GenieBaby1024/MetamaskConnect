@@ -1,6 +1,7 @@
 import React from "react";
-import Header from "../Header/Header";
+import Header from "../Layout/Header/Header";
 import { Helmet } from "react-helmet";
+
 function Landing() {
   return (
     <>
@@ -19,7 +20,7 @@ function Landing() {
       <Header />
       <header className='home-header-bg'>
         <a href='index.html' className='header-logo'>
-          <img className='logo' src='assets/img/zippo-logo.png' alt='logo' />
+          <img className='logo' src="assets/img/zippo-logo.png" alt='logo' />
         </a>
         <div className='swiper-container slider-v3'>
           <div id='swiper-text' className='swiper-wrapper'>

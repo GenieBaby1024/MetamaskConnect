@@ -353,14 +353,14 @@ h6 {
   background-position: center !important;
   background-size: cover !important;
 }
-.img-slider:before {
+/* .img-slider:before {
   content: '';
   width: 100%;
   height: 100%;
   position: absolute;
   background-color: #191c1f;
   opacity: 0.2;
-}
+} */
 .swiper-slide .entity-img {
   display: none;
 }
@@ -1775,14 +1775,14 @@ footer .social-icon {
   min-height: 100vh;
   background: transparent;
 }
-.parallax-window:before {
+/* .parallax-window:before {
   content: '';
   width: 100%;
   height: 100%;
   position: absolute;
   background-color: #000;
   opacity: 0.4;
-}
+} */
 .header-page-container {
   position: absolute;
   top: 0;
