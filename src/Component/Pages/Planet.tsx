@@ -6,7 +6,7 @@ import Header from "../Layout/Header/Header";
 import WalletConnectModal from "../Component/WalletConnectModal/WalletConnectModal";
 import { Grid } from "@material-ui/core";
 import { getNftPrice } from "../../store/api/nft";
-import { nftContractAddress } from "../../config/constant";
+import { collectionName, nftContractAddress } from "../../config/constant";
 
 function Planet() {
   const loginAddress = useAppSelector(selectLoginAddress);
@@ -22,7 +22,9 @@ function Planet() {
     let tokenIdArray: any = [];
     let resArray: any = [];
     assetsDate?.assets.map((item: any) => {
-      tokenIdArray.push(item.token_id);
+      if (item.collection.name === collectionName){
+        tokenIdArray.push(item.token_id);
+      }
     });
     tokenIdArray?.map((item: any) => {
       const params = {
